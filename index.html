@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="免费的代码报错求助整理器：把环境、复现步骤、报错和已尝试的方法整理成 Markdown。无需账号，不调用 AI。">
+<title>代码报错求助整理器：免费生成 Markdown 问题说明 - LiuNengAI</title>
+<link rel="canonical" href="https://liunenglabs.xyz/guides/debug-report/">
+<style>
+:root{color-scheme:light;--ink:#192631;--muted:#526675;--line:#d6e2e6;--accent:#006b5e;--paper:#fff}
+*{box-sizing:border-box}body{margin:0;background:#eef5f4;color:var(--ink);font:16px/1.65 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+main{max-width:1140px;margin:auto;padding:32px 22px 20px}.eyebrow{letter-spacing:.15em;font-size:12px;font-weight:700;color:var(--accent)}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.3;margin:8px 0 12px}h2{font-size:20px;margin:0 0 14px}
+.intro{max-width:780px;color:var(--muted);margin:0 0 16px}.badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}.badges span{font-size:13px;border:1px solid #b7d9d1;border-radius:30px;padding:3px 12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px}
+label{display:block;font-size:14px;font-weight:700;margin:16px 0 6px}input,textarea{display:block;width:100%;border:1px solid #a6bac4;border-radius:8px;background:#fff;color:var(--ink);font:14px/1.6 ui-monospace,monospace;padding:10px 12px}
+input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #83c4b9;outline-offset:2px}
+textarea{min-height:95px;resize:vertical}#report{min-height:550px;white-space:pre-wrap}#report::placeholder{color:#6b7b86}
+.hint{font-size:13px;color:var(--muted);margin:5px 0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 8px}
+button{font:inherit;font-size:14px;border:1px solid #a6bac4;background:white;color:var(--ink);padding:9px 13px;border-radius:8px;cursor:pointer}
+.primary{background:var(--accent);border-color:var(--accent);color:white}button:hover{filter:brightness(.96)}.notice{padding:12px 14px;border-left:3px solid var(--accent);background:#f0f8f5;margin:16px 0;font-size:14px}
+#status{min-height:26px;font-size:14px;color:var(--accent)}footer{font-size:13px;color:var(--muted);margin:22px 0}a{color:var(--accent)}details{margin-top:12px;font-size:14px}summary{cursor:pointer}code{font-family:ui-monospace,monospace}
+@media(max-width:760px){main{padding:22px 14px}.grid{grid-template-columns:1fr}.panel{padding:18px}#report{min-height:390px}}
+</style>
+<meta property="og:title" content="代码报错求助整理器：免费生成 Markdown 问题说明 - LiuNengAI">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://liunenglabs.xyz/guides/debug-report/">
+<meta property="og:description" content="免费的代码报错求助整理器：把环境、复现步骤、报错和已尝试的方法整理成 Markdown。无需账号，不调用 AI。">
+<meta property="og:site_name" content="LiuNengAI">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://liunenglabs.xyz/guides/debug-report/share-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="代码报错求助整理器：免费生成 Markdown 问题说明 - LiuNengAI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="代码报错求助整理器：免费生成 Markdown 问题说明 - LiuNengAI">
+<meta name="twitter:description" content="免费的代码报错求助整理器：把环境、复现步骤、报错和已尝试的方法整理成 Markdown。无需账号，不调用 AI。">
+<meta name="twitter:image" content="https://liunenglabs.xyz/guides/debug-report/share-preview.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "代码报错求助整理器：免费生成 Markdown 问题说明", "url": "https://liunenglabs.xyz/guides/debug-report/", "description": "免费的代码报错求助整理器：把环境、复现步骤、报错和已尝试的方法整理成 Markdown。无需账号，不调用 AI。", "applicationCategory": "DeveloperApplication", "operatingSystem": "Web browser", "inLanguage": "zh-CN", "isAccessibleForFree": true, "creator": {"@type": "Organization", "name": "LiuNengAI"}}</script>
+</head>
+<body>
+<main>
+<header>
+<div class="eyebrow">FREE LEARNING TOOL</div>
+<h1>先把报错说清楚，再一起解决</h1>
+<p class="intro">给同学、助教、项目同事、开源项目维护者或 AI 提问前，把零散信息整理成便于核对复现步骤的说明。工具只整理你填写的内容，不执行代码，也不替你猜答案。</p>
+<div class="badges"><span>免费，无需登录</span><span>输入不上传</span><span>不需要 AI 订阅</span><span>可保存此网页离线使用</span></div>
+<p class="hint" style="overflow-wrap:anywhere"><button id="share-tool" type="button">复制工具链接</button> <span id="share-status" role="status" aria-live="polite"></span></p>
+</header>
+<div class="grid">
+<section class="panel" aria-labelledby="input-title">
+<h2 id="input-title">1. 填写你已经知道的信息</h2>
+<p class="hint">不确定的地方可以直接写“不确定”。请先移除密码、API 密钥、Cookie、学号和未公开数据。</p>
+<label for="goal">目标 / 预期结果</label><input id="goal" maxlength="500" placeholder="例：想读取一个 CSV 并计算平均分">
+<label for="environment">运行环境</label><textarea id="environment" maxlength="3000" placeholder="系统、语言版本、编辑器、依赖版本；课程章节或仓库版本（如有）"></textarea>
+<label for="steps">复现步骤与最小代码</label><textarea id="steps" maxlength="10000" placeholder="从哪一步开始？执行什么命令？只放重现问题必要的代码与示例输入。"></textarea>
+<label for="error">实际结果 / 原始报错</label><textarea id="error" maxlength="10000" placeholder="保留关键报错原文和必要上下文，不要只写“报错了”。"></textarea>
+<label for="tried">已经尝试的方法与结果</label><textarea id="tried" maxlength="5000" placeholder="例：切换过解释器，错误仍相同；查过官方文档某节。"></textarea>
+<label for="question">希望别人帮你判断什么</label><input id="question" maxlength="1000" placeholder="例：如何确定当前解释器和安装依赖的环境是否一致？">
+<div class="actions"><button id="generate" class="primary" type="button">整理成求助说明</button><button id="sample" type="button">填入演示示例</button><button id="clear" type="button">清空</button></div>
+<p class="hint">演示按钮会替换当前内容。页面不保存草稿，关闭或刷新前请自行复制。</p>
+</section>
+<section class="panel" aria-labelledby="output-title">
+<h2 id="output-title">2. 核对后再分享</h2>
+<p class="hint">输出为纯文本 Markdown；你可以继续修改。复制不会自动发给任何人。</p>
+<label for="report">求助说明</label><textarea id="report" aria-describedby="privacy-note" placeholder="填写左侧信息后，点击“整理成求助说明”。" spellcheck="false"></textarea>
+<div class="actions"><button id="copy" class="primary" type="button">复制说明</button><button id="download" type="button">下载 .md</button></div>
+<p id="status" role="status" aria-live="polite"></p>
+<div class="notice" id="privacy-note">发布前再次核对：删除密钥与个人信息；先自己运行最小示例。任何 AI 给出的修改，都要由你理解、测试后再采用。</div>
+<details><summary>用于课程作业时</summary><p>遵守课程的 AI 使用要求，说明哪些内容由自己完成、哪些建议来自 AI。可用于定位错误和理解知识，不将他人或 AI 的整份作业冒充自己的成果。</p></details>
+<details><summary>这个工具如何处理输入？</summary><p>本文件没有上传接口、统计脚本或本地存储。生成在当前浏览器完成；只有你点击复制或下载时才导出文本。工具不自动脱敏，请不要输入秘密。</p></details>
+</section>
+</div>
+<footer>
+<p>由 <a href="https://liunenglabs.xyz/" rel="noopener">LiuNeng AI</a> 制作并免费开放。我们是独立商业服务方，经营 ChatGPT Plus / Pro 个人订阅服务，非 OpenAI 官方。工具免费，使用不需要购买。服务咨询 QQ：941249849。<button id="copy-qq" type="button">复制 QQ</button><span id="qq-status" role="status" aria-live="polite"></span></p>
+<p>建议先使用手头已有的免费工具；只在明确需要相应个人订阅功能时再评估付费。本工具不提供 API 额度，不代写作业。</p>
+<p><a href="source.html" download="debug-help-builder.html">下载单文件源码</a>（此链接需在线访问；也可用浏览器“另存为”保存当前网页。）</p>
+</footer>
+</main>
+<script>
+/*
+MIT License — Copyright (c) 2026 LiuNeng AI
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+"use strict";
+function codeBlock(value) {
+  const marker=String.fromCharCode(96);
+  const runs=String(value).match(new RegExp(marker+"+","g")) || [];
+  const size=Math.max(3,...runs.map(x=>x.length+1));
+  const fence=marker.repeat(size);
+  return fence+"text\n"+value+"\n"+fence;
+}
+function buildReport(data) {
+  const text=(name)=>String(data[name]||"").trim() || "尚未提供，请补充或说明不确定";
+  return [
+    "# 代码报错求助",
+    "## 我想完成什么\n"+text("goal"),
+    "## 运行环境\n"+text("environment"),
+    "## 复现步骤与最小代码\n"+codeBlock(text("steps")),
+    "## 实际结果 / 原始报错\n"+codeBlock(text("error")),
+    "## 已尝试的方法与结果\n"+text("tried"),
+    "## 希望获得的帮助\n"+text("question"),
+    "## 发出前核对\n- [ ] 已删除密钥、Cookie、个人信息和非公开数据\n- [ ] 自己执行过复现步骤，仍能出现相同问题\n- [ ] 如果涉及课程作业，已遵守课程规则并说明 AI 的使用"
+  ].join("\n\n")+"\n";
+}
+const fieldNames=["goal","environment","steps","error","tried","question"];
+const $=(id)=>document.getElementById(id);
+function announce(message){$("status").textContent=message;}
+function generate(){
+  const data=Object.fromEntries(fieldNames.map(k=>[k,$(k).value]));
+  if(!fieldNames.some(k=>data[k].trim())) {announce("先填一点问题信息，或使用演示示例。");return;}
+  $("report").value=buildReport(data);
+  const missing=fieldNames.filter(k=>!data[k].trim()).length;
+  announce(missing?"已整理；还有 "+missing+" 项未填写，请按实际情况补充。":"已整理，请核对秘密和个人信息后再分享。");
+}
+$("generate").addEventListener("click",generate);
+$("sample").addEventListener("click",()=>{
+  const demo={goal:"运行 Python 课程中的示例，导入 requests 库。",environment:"示例环境：macOS；Python 3.12；VS Code。\n依赖版本：暂不确定。",steps:"新建 demo.py，内容只有：\nimport requests\n\n在终端执行：python3 demo.py",error:"ModuleNotFoundError: No module named 'requests'",tried:"运行过 pip install requests，显示已安装；重新运行仍提示找不到模块。\n尚未核对 pip 和 python3 是否指向同一环境。",question:"应该怎样只读检查解释器路径和依赖安装位置，确认是不是环境不一致？"};
+  fieldNames.forEach(k=>{$(k).value=demo[k];});generate();
+});
+$("clear").addEventListener("click",()=>{fieldNames.forEach(k=>{$(k).value="";});$("report").value="";announce("已清空；页面不会保存草稿。");$("goal").focus();});
+$("copy").addEventListener("click",async()=>{
+  const value=$("report").value;if(!value.trim()){announce("请先生成求助说明。");return;}
+  try {
+    if(!navigator.clipboard || !navigator.clipboard.writeText)throw new Error("clipboard unavailable");
+    await navigator.clipboard.writeText(value);announce("已复制。请在准备发布的位置再检查一遍。");
+  } catch(e) {$("report").focus();$("report").select();announce("浏览器不允许自动复制，已选中文本，请按 ⌘C 或 Ctrl+C。");}
+});
+$("download").addEventListener("click",()=>{
+  if(!$("report").value.trim()){announce("请先生成求助说明。");return;}
+  const url=URL.createObjectURL(new Blob([$("report").value],{type:"text/markdown;charset=utf-8"}));
+  const link=document.createElement("a");link.href=url;link.download="debug-help.md";document.body.appendChild(link);link.click();link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);announce("已生成下载文件；分享前请核对内容。");
+});
+// Sharing copies a fixed public URL, never report text or input fields.
+$("share-tool").addEventListener("click",async()=>{
+  const url="https://liunenglabs.xyz/guides/debug-report/";
+  try {
+    if(!navigator.clipboard || !navigator.clipboard.writeText)throw new Error("clipboard unavailable");
+    await navigator.clipboard.writeText("代码报错求助整理器 "+url);
+    $("share-status").textContent=" 已复制工具链接，不含你填写的内容。";
+  } catch(e) {$("share-status").textContent=" 请手动复制工具链接："+url;}
+});
+// Copy only the public business contact; this does not send a message.
+$("copy-qq").addEventListener("click",async()=>{
+  try {
+    if(!navigator.clipboard || !navigator.clipboard.writeText)throw new Error("clipboard unavailable");
+    await navigator.clipboard.writeText("941249849");
+    $("qq-status").textContent=" 已复制 QQ 号。";
+  } catch(e) {$("qq-status").textContent=" 请手动复制：941249849";}
+});
+</script>
+</body>
+</html>
