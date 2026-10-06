@@ -4,6 +4,12 @@ A free Chinese-language form that turns environment details, reproduction steps,
 
 [Use the live tool](https://liunenglabs.xyz/guides/debug-report/) · [查看全部免费工具与指南](https://liunenglabs.xyz/guides/?utm_source=github)
 
+## 下载与离线使用
+
+[下载 v1.0.0 单文件版](https://github.com/a941249849/liunengai-debug-report/releases/tag/v1.0.0)：在 Assets 中选择 `debug-help-builder.html`，保存后用浏览器打开。无需安装或联网；导航链接需在线访问。发行页同时提供 SHA-256 校验文件、固定版本的代码和中英文使用说明。
+
+[Download the offline release](https://github.com/a941249849/liunengai-debug-report/releases/tag/v1.0.0). Save the HTML asset and open it in a browser. The interface is Chinese.
+
 ## 使用
 
 1. 打开 `index.html`，或直接访问在线工具。
