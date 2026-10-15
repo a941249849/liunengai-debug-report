@@ -29,6 +29,15 @@ A free Chinese-language form that turns environment details, reproduction steps,
 
 Serve `index.html` from any static host, or open it directly in a browser. All application HTML, CSS and JavaScript are in that file.
 
+## 准备把报告交给 AI 时
+
+本工具只整理问题，不提供 AI 模型、订阅或 API 额度。你可以把核对后的报告交给同学、维护者，或自己选择的 AI；使用本工具不需要购买任何服务。
+
+- [ChatGPT 订阅与 API 有什么区别？](https://liunenglabs.xyz/guides/chatgpt-subscription-vs-api/?utm_source=github)：先分清在聊天界面使用，还是在程序中调用，避免买错服务。
+- [Codex 提示验证电话号码怎么办？](https://liunenglabs.xyz/guides/codex-phone-verification/?utm_source=github)：区分短信验证、MFA 和订阅额度；一次接码不提供会员或 API 余额，也不保证通过验证。
+
+以上是 LiuNengAI 运营方整理的说明，相关页面会介绍本站另行收费的服务，非 OpenAI 官方说明。不要向他人发送账号密码、验证码或登录 Session。
+
 ## License and operator
 
 MIT © 2026 LiuNeng AI. See [LICENSE](LICENSE).
