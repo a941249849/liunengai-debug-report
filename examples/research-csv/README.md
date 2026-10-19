@@ -4,7 +4,7 @@
 
 ## 使用
 
-1. 将压缩包完整解压，保持所有文件在同一目录。
+1. 从[预览页](https://liunenglabs.xyz/guides/research-csv-debug/)下载完整示例包并解压；或下载本仓库，进入 `examples/research-csv/`。保持示例文件在同一目录。
 2. 使用 Python 3.9 或更高版本。在自己的虚拟环境安装：`python -m pip install -r requirements.txt`。
 3. 用 Jupyter 打开 `csv-debug.ipynb`，选择该环境内核，依次运行全部单元格。Notebook 的工作目录应为本文件所在目录。
 4. 不使用 Notebook 时，在此目录运行 `python run_demo.py`。输出 result.png、summary.csv、excluded.csv；重跑会覆盖这三个输出，不修改 example.csv。
