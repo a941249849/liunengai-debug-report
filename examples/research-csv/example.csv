@@ -1,0 +1,9 @@
+sample_id,group,signal
+C1,control,10
+C2,control,12
+C3,control,11
+C4,control,
+T1,treatment,15
+T2,treatment,17
+T3,treatment,16
+T4,treatment,not_measured
