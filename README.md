@@ -38,6 +38,12 @@ Serve `index.html` from any static host, or open it directly in a browser. All a
 
 以上是 LiuNengAI 运营方整理的说明，相关页面会介绍本站另行收费的服务，非 OpenAI 官方说明。不要向他人发送账号密码、验证码或登录 Session。
 
+## 可运行案例：CSV 报错与结果核验
+
+想练习怎样把问题说清楚，可以从 [research-csv 示例](examples/research-csv/) 开始：用自制数据复现缺测标记报错，运行完整修复，并核对排除记录、样本数和均值。附 Python 脚本、Notebook 和向 AI 描述最小复现问题的模板；无需 AI 账号或购买。安装 Python 依赖需联网；该案例的依赖与运行要求独立于上方免安装的 HTML 工具。
+
+[无需登录预览及下载完整包](https://liunenglabs.xyz/guides/research-csv-debug/)。这是一般数据清理练习，不代替真实研究的分析方案或统计推断。
+
 ## License and operator
 
 MIT © 2026 LiuNeng AI. See [LICENSE](LICENSE).
